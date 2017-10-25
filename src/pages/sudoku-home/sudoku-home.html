@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>sudoku</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Level</ion-label>
+    <ion-select [(ngModel)]="level">
+      <div *ngFor="let item of levelOptions">
+        <ion-option [value]="item.value">{{item.name}}</ion-option>
+      </div>
+    </ion-select>
+  </ion-item>
+  <ion-grid class="allsquare">
+    <ion-row>
+      <ion-col>
+          <button block ion-button (click)="change()">Change</button>
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let x of matrix">
+      <ion-col col="1" class="sdk-cell" *ngFor="let y of x">
+        <div *ngIf="y" class="staticValue">{{y}}</div>
+        <div *ngIf="!y" class="editValue">
+          <input type="number">
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <button block ion-button (click)="check()">Check</button>
+      </ion-col>
+      <ion-col>
+          <button block ion-button (click)="peek()">Peek</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

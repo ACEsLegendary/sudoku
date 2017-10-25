@@ -1,0 +1,64 @@
+page-sudoku-home {
+    .sdk-cell{
+        width: 10%;
+    }
+    input{
+        width: 100%;
+    }
+    
+}
+
+.allsquare{
+    background-color: #940302;
+}
+.oddspuare{
+    width: 44px;
+    height: 44px;
+    border: 1px solid #D40703;
+    background-color: #C40502;
+}
+.evensquare{
+    width: 44px;
+    height: 44px;
+    border: 1px solid #EC0904;
+    background-color: #DA0603;
+}
+
+.staticValue
+{
+    font-family: Segoe UI, Arial;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 30px;
+    color: #6C0000;
+}
+
+.staticValue,.editValue
+{
+    width: 42px;
+    height: 42px;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid #DA0603;
+}
+
+.editValue:hover
+{
+    background: #c29a9a;
+}
+
+.editValue input
+{
+    font-family: Segoe UI, Arial;
+    font-size: 30px;
+    color: #FFFFFF;
+    width: 44px;
+    /*height: 44px;*/
+    padding: 0px;
+    border: 0px;
+    background: none !important;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    left: -1px;
+}

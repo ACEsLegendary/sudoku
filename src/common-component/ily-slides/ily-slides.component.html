@@ -1,0 +1,8 @@
+<ion-slides>
+    <ion-slide *ngFor="let item of slidesItems">
+        <div class="">
+            <img [src]="item.img">
+        </div>
+        <ion-label>{{item.label}}</ion-label>
+    </ion-slide>
+</ion-slides>

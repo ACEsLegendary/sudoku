@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title >
+      Game Center
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-card *ngFor="let item of games" (click)="gotoGame(item.page)">
+      <img class="game-icon" [src]="item.img">
+      <button ion-button full color="secondary">{{item.name}}</button>
+    </ion-card>
+  </ion-list>
+</ion-content>
