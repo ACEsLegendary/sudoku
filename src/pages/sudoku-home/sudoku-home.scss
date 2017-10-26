@@ -9,19 +9,17 @@ page-sudoku-home {
 }
 
 .allsquare{
-    background-color: #940302;
+    background-color: #029474;
 }
 .oddspuare{
-    width: 44px;
-    height: 44px;
-    border: 1px solid #D40703;
-    background-color: #C40502;
+    border: 1px solid rgb(90, 197, 108);
+    box-sizing: border-box;
+    background-color: rgb(128, 196, 115);
 }
 .evensquare{
-    width: 44px;
-    height: 44px;
-    border: 1px solid #EC0904;
-    background-color: #DA0603;
+    border: 1px solid rgb(143, 149, 233);
+    box-sizing: border-box;
+    background-color: rgb(169, 189, 228);
 }
 
 .staticValue
@@ -35,11 +33,10 @@ page-sudoku-home {
 
 .staticValue,.editValue
 {
-    width: 42px;
-    height: 42px;
     padding: 0px;
     margin: 0px;
     border: 1px solid #DA0603;
+    box-sizing: border-box;
 }
 
 .editValue:hover
@@ -52,7 +49,6 @@ page-sudoku-home {
     font-family: Segoe UI, Arial;
     font-size: 30px;
     color: #FFFFFF;
-    width: 44px;
     /*height: 44px;*/
     padding: 0px;
     border: 0px;

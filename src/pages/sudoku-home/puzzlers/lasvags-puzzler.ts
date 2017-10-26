@@ -102,7 +102,7 @@ export class LasVegasPuzzler implements Puzzler {
         let puzzle = this.puzzle;
         if (puzzle) {
             let holeNum = this.calcHoleNum(level);
-            let range = 81;
+            let range = 80;
             while (holeNum-- > 0) {
                 var index = Math.floor(Math.random() * range);
                 if (this.puzzle[Math.floor(index / 9)][index % 9]) {

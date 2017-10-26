@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { SudokuHomePage } from './sudoku-home';
 import { SudokuPuzzlerModule } from './puzzlers';
+import { CommonUtilsModule } from '../../common-utils';
 
 
 
@@ -12,7 +13,8 @@ import { SudokuPuzzlerModule } from './puzzlers';
   ],
   imports: [
     IonicPageModule.forChild(SudokuHomePage),
-    SudokuPuzzlerModule, 
+    SudokuPuzzlerModule,
+    CommonUtilsModule 
   ],
 })
 export class SudokuHomePageModule {}

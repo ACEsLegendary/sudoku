@@ -26,7 +26,7 @@
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let x of matrix">
-      <ion-col col="1" class="sdk-cell" *ngFor="let y of x">
+      <ion-col  class="pd0 sdk-cell" style="padding:0" *ngFor="let y of x">
         <div *ngIf="y" class="staticValue">{{y}}</div>
         <div *ngIf="!y" class="editValue">
           <input type="number">

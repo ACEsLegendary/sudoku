@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LasVegasPuzzler } from './puzzlers/index';
 import { SudokuChecker } from './utils/sudoku-checker';
+import { UIService } from '../../common-utils/index';
 
 
 
@@ -57,7 +58,8 @@ export class SudokuHomePage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private puzzler: LasVegasPuzzler,
-    ) {
+    private uiService: UIService
+  ) {
   }
 
   ngAfterViewInit() {
@@ -72,12 +74,32 @@ export class SudokuHomePage {
 
   check() {
     if (SudokuChecker.checkMatrix(this.matrix)) {
-      // this.uiService.presentAlert({
-      //   title:"Congratulations",
-      //   message:"You finished this sudoku successfully!"
-      // })
-      alert("Congratulations,You finished this sudoku successfully!");
-    }else{
+      this.uiService.presentAlert({
+        title: "Congratulations",
+        message: "You finished this sudoku successfully!",
+        buttons: [
+          {
+            text: "TryHarder",
+            role:"danger",
+            handler: () => {
+              this.level++;
+              this.initPuzzle();
+            }
+          },{
+            text: "TryMore",
+            handler: () => {
+              this.initPuzzle();
+            }
+          }, {
+            text: "Cancel",
+            role:"cancel",
+            handler: () => {
+              return;
+            }
+          }
+        ]
+      });
+    } else {
       alert("Sorry,You finished this sudoku unsuccessfully!");
     }
   }
@@ -92,7 +114,7 @@ export class SudokuHomePage {
     }
   }
 
-  change(){
+  change() {
     this.initPuzzle();
   }
 }
