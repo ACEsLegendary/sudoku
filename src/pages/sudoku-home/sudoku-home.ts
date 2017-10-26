@@ -100,7 +100,10 @@ export class SudokuHomePage {
         ]
       });
     } else {
-      alert("Sorry,You finished this sudoku unsuccessfully!");
+      this.uiService.presentAlert({
+        title: "Sorry",
+        message: "You didn't finish this sudoku successfully! Please Try Again!",
+      });
     }
   }
 
