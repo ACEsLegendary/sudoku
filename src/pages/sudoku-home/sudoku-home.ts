@@ -120,4 +120,8 @@ export class SudokuHomePage {
   change() {
     this.initPuzzle();
   }
+
+  calcColor(i:number,j:number):boolean{
+    return (Math.floor(i/3)%2==0&&Math.floor(j/3)%2==0)||(Math.floor(i/3)%2==1&&Math.floor(j/3)%2==1);
+  }
 }

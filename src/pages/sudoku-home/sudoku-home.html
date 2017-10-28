@@ -25,8 +25,8 @@
 
       </ion-col>
     </ion-row>
-    <ion-row *ngFor="let x of matrix">
-      <ion-col  class="pd0 sdk-cell" style="padding:0" *ngFor="let y of x">
+    <ion-row *ngFor="let x of matrix;let i=index;">
+      <ion-col  class="pd0 sdk-cell" style="padding:0" *ngFor="let y of x;let j=index" [ngClass]="{'evensquare':calcColor(i,j),'oddspuare':!calcColor(i,j)}">
         <div *ngIf="y" class="staticValue">{{y}}</div>
         <div *ngIf="!y" class="editValue">
           <input type="number">
