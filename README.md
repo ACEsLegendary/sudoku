@@ -1,4 +1,5 @@
 This is A sudoku game built on Ionic.
+You can try on https://aceslegendary.github.io/sudoku-demo
 
 ##prerequisite
 @ionic/cli

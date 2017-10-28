@@ -10,7 +10,7 @@ export class HomePage {
   games=[
     {
       name:"sudoku",
-      img:"/assets/img/sudoku/sudoku.jpg",
+      img:"assets/img/sudoku/sudoku.jpg",
       page:"SudokuHomePage"
     }
   ];
