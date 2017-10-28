@@ -4,3 +4,9 @@ export interface Puzzler{
      */
     makePuzzle(level:number):number[][];
 }
+
+export class PuzzlerService implements Puzzler{
+    makePuzzle(level:number):number[][]{
+        return null;
+    }
+}

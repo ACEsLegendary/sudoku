@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LasVegasPuzzler } from './puzzlers/index';
 import { SudokuChecker } from './utils/sudoku-checker';
-import { UIService } from '../../common-utils/index';
+import { UIService } from '../../common-utils';
+import { PuzzlerService } from './puzzlers';
 
 
 
@@ -57,7 +57,7 @@ export class SudokuHomePage {
   matrix: number[][];
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private puzzler: LasVegasPuzzler,
+    private puzzler: PuzzlerService,
     private uiService: UIService
   ) {
   }
