@@ -4,7 +4,7 @@ export class SudokuChecker {
         let cb = new Array(9).fill(0, 0, 9);
         let sb = new Array(9).fill(0, 0, 9);
         for (var i = 0; i < 9; i++) {
-            if(matrix[i].find(x=>x==0)>-1){
+            if(matrix[i].find(x=>x==0||x==null)>-1){
                 return false;
             }
             for (var j = 0; j < 9; j++) {
@@ -36,4 +36,8 @@ export class SudokuChecker {
         }
         return true;
     }
+
+    // private static validateCell(x:any):boolean{
+    //     if(typeof x ==undefined)
+    // }
 }

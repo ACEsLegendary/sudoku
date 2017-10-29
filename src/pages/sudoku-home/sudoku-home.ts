@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SudokuChecker } from './utils/sudoku-checker';
 import { UIService } from '../../common-utils';
 import { PuzzlerService } from './puzzlers';
+import { SudokuUtils } from './utils/sudoku-utils';
 
 
 
@@ -55,21 +56,35 @@ export class SudokuHomePage {
     }
   ];
   matrix: number[][];
+  originMatrix;
+  userMatrix;
+  anwserMatrix;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private puzzler: PuzzlerService,
     private uiService: UIService
   ) {
-  }
-
-  ngAfterViewInit() {
     this.initPuzzle();
   }
 
-  userMatrix;
   initPuzzle() {
-    this.userMatrix = this.puzzler.makePuzzle(this.level);
+    this.originMatrix = this.puzzler.makePuzzle(this.level);
+    this.userMatrix=SudokuUtils.deepClone(this.originMatrix);
+    this.precedure(this.userMatrix);
     this.matrix = this.userMatrix;
+  }
+  /**
+   * 
+   * @param matrix set 0 cell to null to fit ion-input
+   */
+  precedure(matrix:any[][]){
+    matrix.forEach(row=>{
+      row.forEach((col,index)=>{
+        if(col==0){
+          row[index]=new String();
+        }
+      });
+    });
   }
 
   check() {
@@ -111,7 +126,10 @@ export class SudokuHomePage {
   peek() {
     this.peeking = !this.peeking;
     if (this.peeking) {
-      this.matrix = this.puzzler.getAnswer();
+      if(!this.anwserMatrix){
+        this.anwserMatrix=SudokuUtils.deepClone(this.puzzler.getAnswer());
+      }
+      this.matrix = this.anwserMatrix;
     } else {
       this.matrix = this.userMatrix;
     }
@@ -120,6 +138,8 @@ export class SudokuHomePage {
   change() {
     this.initPuzzle();
   }
+
+  
 
   calcColor(i:number,j:number):boolean{
     return (Math.floor(i/3)%2==0&&Math.floor(j/3)%2==0)||(Math.floor(i/3)%2==1&&Math.floor(j/3)%2==1);

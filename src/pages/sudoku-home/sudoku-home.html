@@ -19,26 +19,26 @@
   <ion-grid class="allsquare">
     <ion-row>
       <ion-col>
-          <button block ion-button (click)="change()">Change</button>
+        <button block ion-button (click)="change()">Change</button>
       </ion-col>
       <ion-col>
 
       </ion-col>
     </ion-row>
     <ion-row *ngFor="let x of matrix;let i=index;">
-      <ion-col  class="pd0 sdk-cell" style="padding:0" *ngFor="let y of x;let j=index" [ngClass]="{'evensquare':calcColor(i,j),'oddspuare':!calcColor(i,j)}">
-        <div *ngIf="y" class="staticValue">{{y}}</div>
-        <div *ngIf="!y" class="editValue">
-          <input type="number">
+      <ion-col class="pd0 sdk-cell" style="padding:0" *ngFor="let y of x;let j=index;" [ngClass]="{'evensquare':calcColor(i,j),'oddspuare':!calcColor(i,j)}">
+        <div *ngIf="originMatrix[i][j]" class="staticValue">{{matrix[i][j]}}</div>
+        <div *ngIf="!originMatrix[i][j]" class="editValue">
+          <input type="number" min='1' max='9' [readonly]="peeking" [(ngModel)]="matrix[i][j]">
         </div>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-          <button block ion-button (click)="check()">Check</button>
+        <button block ion-button (click)="check()">Check</button>
       </ion-col>
       <ion-col>
-          <button block ion-button (click)="peek()">Peek</button>
+        <button block ion-button (click)="peek()">Peek</button>
       </ion-col>
     </ion-row>
   </ion-grid>

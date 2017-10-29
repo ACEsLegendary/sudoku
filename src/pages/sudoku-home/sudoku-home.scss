@@ -39,9 +39,13 @@ page-sudoku-home {
 {
     background: #c29a9a;
 }
+.editValue ion-input{
+    text-align: center;
+}
 
 .editValue input
 {
+    margin: 0;
     font-family: Segoe UI, Arial;
     font-size: 30px;
     color: #FFFFFF;
