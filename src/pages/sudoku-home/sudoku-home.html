@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-item>
     <ion-label>{{ 'Level' | translate}}</ion-label>
-    <ion-select [(ngModel)]="level">
+    <ion-select [(ngModel)]="level" [cancelText]="'Cancel'|translate" [okText]="'OK'|translate">
       <div *ngFor="let item of levelOptions">
         <ion-option [value]="item.value">{{item.name | translate}}</ion-option>
       </div>

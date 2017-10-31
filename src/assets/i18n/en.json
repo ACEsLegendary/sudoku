@@ -1,1 +1,4 @@
-{}
+{
+    "Congratulations_MSG": "You finished this sudoku successfully!",
+    "Sorry_MSG": "You didn't finish this sudoku successfully! Please Try Again!"
+}

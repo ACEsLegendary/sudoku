@@ -14,5 +14,13 @@
     "Legendary": "传说",
     "Change": "换  题",
     "Check": "检  查",
-    "Peek": "提  示"
+    "Peek": "提  示",
+    "Congratulations":"恭 喜",
+    "Congratulations_MSG":"恭喜完成此道数独，你很棒棒哟^_^",
+    "Sorry":"抱 歉",
+    "Sorry_MSG":"你还没有正确地完成此道数独，要不再试试？XD",
+    "TryHarder":"下一难度",
+    "TryMore":"再来一题",
+    "Cancel":"取消",
+    "OK":"确认"
 }

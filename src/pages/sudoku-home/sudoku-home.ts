@@ -92,24 +92,22 @@ export class SudokuHomePage {
   check() {
     if (SudokuChecker.checkMatrix(this.matrix)) {
       this.uiService.presentAlert({
-        title: "Congratulations",
-        message: "You finished this sudoku successfully!",
+        title: this.translate.instant("Congratulations"),
+        message: this.translate.instant("Congratulations_MSG"),
         buttons: [
           {
-            text: "TryHarder",
-            role:"danger",
+            text: this.translate.instant("TryHarder"),
             handler: () => {
               this.level++;
               this.initPuzzle();
             }
           },{
-            text: "TryMore",
+            text:  this.translate.instant("TryMore"),
             handler: () => {
               this.initPuzzle();
             }
           }, {
-            text: "Cancel",
-            role:"cancel",
+            text:  this.translate.instant("Cancel"),
             handler: () => {
               return;
             }
@@ -118,8 +116,8 @@ export class SudokuHomePage {
       });
     } else {
       this.uiService.presentAlert({
-        title: "Sorry",
-        message: "You didn't finish this sudoku successfully! Please Try Again!",
+        title: this.translate.instant("Sorry"),
+        message: this.translate.instant("Sorry_MSG"),
       });
     }
   }
