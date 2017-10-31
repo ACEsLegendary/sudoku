@@ -11,12 +11,18 @@ export class MyApp {
   rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+    this.redirect2HomePageIfNecessary();
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+  redirect2HomePageIfNecessary(){
+    if(window.location.hash){
+      window.location.href=window.location.href.replace(window.location.hash,"");
+    }
   }
 }
 

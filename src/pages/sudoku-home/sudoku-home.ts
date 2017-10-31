@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SudokuChecker } from './utils/sudoku-checker';
-import { UIService } from '../../common-utils';
+import { UIService, CommonTranslateService } from '../../common-utils';
 import { PuzzlerService } from './puzzlers';
 import { SudokuUtils } from './utils/sudoku-utils';
 
@@ -35,24 +35,25 @@ export class SudokuHomePage {
     }, {
       value: 4,
       name: "Senior"
-    }, {
-      value: 5,
+    }, 
+    {
+      value:5,
+      name:"Bachelor"
+    },{
+      value: 6,
       name: "Master"
     }, {
-      value: 6,
+      value: 7,
       name: "Doctor"
     }, {
-      value: 7,
+      value: 8,
       name: "Genius"
     }, {
-      value: 8,
+      value: 9,
       name: "Godlike"
     }, {
-      value: 9,
-      name: "Legendary"
-    }, {
       value: 10,
-      name: "Computer"
+      name: "Legendary"
     }
   ];
   matrix: number[][];
@@ -62,7 +63,8 @@ export class SudokuHomePage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private puzzler: PuzzlerService,
-    private uiService: UIService
+    private uiService: UIService,
+    private translate: CommonTranslateService
   ) {
     this.initPuzzle();
   }

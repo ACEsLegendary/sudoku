@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { CommonTranslateService } from '../../common-utils';
 
 @Component({
   selector: 'page-home',
@@ -7,20 +8,20 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  games=[
+  games = [
     {
-      name:"sudoku",
-      img:"assets/img/sudoku/sudoku.jpg",
-      page:"SudokuHomePage"
+      name: "sudoku",
+      img: "assets/img/sudoku/sudoku.jpg",
+      page: "SudokuHomePage"
     }
   ];
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+    private translate: CommonTranslateService
+  ) { }
 
-  }
 
-
-  gotoGame(page){
-    if(page){
+  gotoGame(page) {
+    if (page) {
       this.navCtrl.push(page);
     }
   }

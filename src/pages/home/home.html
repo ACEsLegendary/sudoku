@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title >
-      Game Center
+      <span class="lsp1px">{{'Game Center'|translate}}</span>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,7 +10,7 @@
   <ion-list>
     <ion-card *ngFor="let item of games" (click)="gotoGame(item.page)">
       <img class="game-icon" [src]="item.img">
-      <button ion-button full color="secondary">{{item.name}}</button>
+      <button ion-button full color="secondary"><span class="lsp1px">{{item.name|translate}}</span></button>
     </ion-card>
   </ion-list>
 </ion-content>
