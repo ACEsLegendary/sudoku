@@ -14,8 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   imports: [
     IonicPageModule.forChild(SudokuHomePage),
-    TranslateModule.forChild({
-    }),
+    TranslateModule.forChild(),
     SudokuPuzzlerModule,
     CommonUtilsModule
   ],
